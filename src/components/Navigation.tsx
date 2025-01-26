@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import ThemeSwitch from './ThemeSwitch';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -13,69 +14,42 @@ export default function Navigation() {
   ];
 
   return (
-    <div className="w-full fixed top-0 z-50 px-4 py-4">
-      <motion.nav 
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="max-w-2xl mx-auto"
-      >
-        <div className="relative px-4 py-2 rounded-xl bg-black/20 backdrop-blur-md border border-white/10">
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-white/5 to-transparent -z-10" />
-          
-          <div className="flex items-center justify-between">
-            {/* Logo/Home */}
-            <Link href="/">
-              <motion.div
-                className="text-emerald-400 font-medium relative group px-3 py-1"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10">HK</span>
-                <div className="absolute inset-0 bg-emerald-400/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-200" />
-              </motion.div>
-            </Link>
+    <nav className="fixed top-0 left-0 right-0 z-40 px-4 py-4 mt-10">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex justify-between items-center">
+          <div className="relative h-[44px] px-4 rounded-xl bg-card-bg border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 flex items-center">
+            <div className="flex items-center gap-4">
+              {/* Logo/Home */}
+              <Link href="/">
+                <div className={`px-3 py-1 rounded-lg ${pathname === '/' ? 'active-state' : 'hover-effect'}`}>
+                  <span className="relative z-10">Home</span>
+                </div>
+              </Link>
 
-            {/* Navigation Items */}
-            <div className="flex items-center gap-2">
-              {navItems.map((item) => (
-                <Link key={item.name} href={item.path}>
-                  <motion.div
-                    className={`px-3 py-1 rounded-lg relative group ${
-                      pathname === item.path 
-                        ? 'text-white' 
-                        : 'text-gray-400'
-                    }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span className="relative z-10 text-sm">{item.name}</span>
-                    <div className={`absolute inset-0 rounded-lg transition-all duration-200 -z-10 
-                      ${pathname === item.path 
-                        ? 'bg-white/10' 
-                        : 'bg-white/0 group-hover:bg-white/5'
-                      }`} 
-                    />
-                  </motion.div>
-                </Link>
-              ))}
+              {/* Navigation Items */}
+              <div className="flex items-center gap-2">
+                {navItems.map((item) => (
+                  <Link key={item.name} href={item.path}>
+                    <div className={`px-3 py-1 rounded-lg ${pathname === item.path ? 'active-state' : 'hover-effect'}`}>
+                      <span className="relative z-10 text-sm">{item.name}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* GitHub Link */}
+              <Link href="https://github.com/hrithikkoduri" target="_blank" rel="noopener noreferrer">
+                <div className="hover-effect px-3 py-1 rounded-lg">
+                  <span className="relative z-10 text-sm">GitHub</span>
+                </div>
+              </Link>
             </div>
-
-            {/* GitHub Link */}
-            <Link href="https://github.com/hrithikkoduri" target="_blank" rel="noopener noreferrer">
-              <motion.div
-                className="text-gray-400 relative group px-3 py-1"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="relative z-10 text-sm">GitHub</span>
-                <div className="absolute inset-0 bg-white/5 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-200" />
-              </motion.div>
-            </Link>
+          </div>
+          <div className="h-[44px] flex items-center">
+            <ThemeSwitch />
           </div>
         </div>
-      </motion.nav>
-    </div>
+      </div>
+    </nav>
   );
 }

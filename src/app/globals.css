@@ -5,17 +5,38 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+  --accent: #10b981;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --card-bg: rgba(0, 0, 0, 0.2);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --accent: #10b981;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add these new styles */
+.hover-effect {
+  @apply transition-all duration-200;
+}
+
+.hover-effect:hover {
+  @apply text-[#10b981] bg-card-border;
+  transform: scale(1.05);
+}
+
+.active-state {
+  @apply text-[#10b981] bg-card-border;
 }

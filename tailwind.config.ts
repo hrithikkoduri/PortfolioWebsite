@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'card-bg': "var(--card-bg)",
+        'card-border': "var(--card-border)",
+        'text-primary': "var(--text-primary)",
+        'text-secondary': "var(--text-secondary)",
       },
       fontFamily: {
         handwritten: ['Caveat', 'cursive'],
