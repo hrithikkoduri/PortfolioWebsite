@@ -5,6 +5,8 @@ import Navigation from '@/components/Navigation';
 import Image from 'next/image';
 import { motion, useAnimation, useScroll } from 'framer-motion';
 import SocialLinks from '@/components/SocialLinks';
+import Recommendations from '@/components/Recommendations';
+import Footer from '@/components/Footer';
 
 const experiences = [
   {
@@ -197,7 +199,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-24 px-8 ">
+      <main className="min-h-screen pt-24 px-8">
         <div className="max-w-5xl mx-auto py-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Text Content */}
@@ -690,7 +692,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Recommendations />
       </main>
+      <Footer />
     </>
   );
 }
