@@ -12,6 +12,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        handwritten: ['Caveat', 'cursive'],
+      },
+      scale: {
+        '102': '1.02',
+      },
     },
   },
   plugins: [],

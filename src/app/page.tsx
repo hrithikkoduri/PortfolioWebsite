@@ -4,7 +4,7 @@ import { useState, useCallback } from 'react';
 import DecryptedText from '@/components/DecryptedText';
 import Navigation from '@/components/Navigation';
 import Image from 'next/image';
-import profile from './profile.png'  // Adjust the path to match your image location
+import profile from './profile_.png'  // Adjust the path to match your image location
 
 export default function Home() {
   const [animationStates, setAnimationStates] = useState({
@@ -94,15 +94,30 @@ export default function Home() {
 
             {/* Image Section */}
             <div className="w-full md:w-[400px] sticky top-24">
-              <div className="aspect-square relative rounded-2xl overflow-hidden bg-gray-900">
-                <Image
-                  src={profile} 
-                  alt="Hrithik Koduri"
-                  width={400}
-                  height={400}
-                  priority
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
-                />
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl transform transition-transform duration-300 hover:scale-102 rotate-2">
+                {/* Image container */}
+                <div className="aspect-square relative rounded-lg overflow-hidden bg-gray-900 mb-4">
+                  <Image
+                    src="/profile_.png"
+                    alt="Hrithik Koduri"
+                    width={400}
+                    height={400}
+                    priority
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                {/* Polaroid caption */}
+                <p className="text-center text-gray-600 dark:text-gray-400 text-sm px-2 space-y-1">
+                  <span className="block">
+                    Graduated from University of Arizona,
+                    <br />
+                    Eller College of Management
+                  </span>
+                  <span className="block text-sm">
+                    Dual Masters in <span className="font-bold">MBA</span> and <span className="font-bold">MSMIS</span>
+    
+                  </span>
+                </p>
               </div>
             </div>
           </div>
