@@ -13,6 +13,12 @@ export default function Home() {
   const [opacity2, setOpacity2] = useState(0);
   const [position3, setPosition3] = useState({ x: 0, y: 0 });
   const [opacity3, setOpacity3] = useState(0);
+  const [position4, setPosition4] = useState({ x: 0, y: 0 });
+  const [opacity4, setOpacity4] = useState(0);
+  const [position5, setPosition5] = useState({ x: 0, y: 0 });
+  const [opacity5, setOpacity5] = useState(0);
+  const [position6, setPosition6] = useState({ x: 0, y: 0 });
+  const [opacity6, setOpacity6] = useState(0);
 
   const handleMouseMove1 = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -51,6 +57,45 @@ export default function Home() {
 
   const handleMouseLeave3 = () => {
     setOpacity3(0);
+  };
+
+  const handleMouseMove4 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition4({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };  
+
+  const handleMouseEnter4 = () => {
+    setOpacity4(0.6);
+  };
+
+  const handleMouseLeave4 = () => {
+    setOpacity4(0);
+  };
+
+  const handleMouseMove5 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition5({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };  
+
+  const handleMouseEnter5 = () => {
+    setOpacity5(0.6);
+  };
+
+  const handleMouseLeave5 = () => {
+    setOpacity5(0);
+  };
+
+  const handleMouseMove6 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition6({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };  
+
+  const handleMouseEnter6 = () => {
+    setOpacity6(0.6);
+  };
+
+  const handleMouseLeave6 = () => {
+    setOpacity6(0);
   };
 
   return (
@@ -155,12 +200,12 @@ export default function Home() {
                 className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
                 style={{
                   opacity: opacity1,
-                  background: `radial-gradient(circle at ${position1.x}px ${position1.y}px, rgba(186, 85, 255, 0.8), transparent 100%)`,
+                  background: `radial-gradient(circle at ${position1.x}px ${position1.y}px, rgba(186, 85, 255, 0.3), transparent 100%)`,
                 }}
               />
               <div className="px-6 py-4 flex items-center gap-2">
                 <Image
-                  src="/WebRover_.png"
+                  src="/WebRover.png"
                   alt="WebRover Logo"
                   width={40}
                   height={40}
@@ -203,7 +248,7 @@ export default function Home() {
                 className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
                 style={{
                   opacity: opacity2,
-                  background: `radial-gradient(circle at ${position2.x}px ${position2.y}px, rgba(39, 118, 245, 0.8), transparent 100%)`,
+                  background: `radial-gradient(circle at ${position2.x}px ${position2.y}px, rgba(39, 118, 245, 0.3), transparent 100%)`,
                 }}
               />
               <div className="px-6 py-4 flex items-center gap-2">
@@ -251,7 +296,7 @@ export default function Home() {
                 className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
                 style={{
                   opacity: opacity3,
-                  background: `radial-gradient(circle at ${position3.x}px ${position3.y}px, rgba(255, 255, 0, 0.8), transparent 100%)`,
+                  background: `radial-gradient(circle at ${position3.x}px ${position3.y}px, rgba(255, 255, 0, 0.3), transparent 100%)`,
                 }}
               />
               <div className="px-6 py-4 flex items-center gap-2">
@@ -285,6 +330,153 @@ export default function Home() {
             </a>
 
 
+                  {/* Project Card 4 */}
+            <a
+              href="https://github.com/hrithikkoduri/DelvinDocs.AI" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              onMouseMove={handleMouseMove4}
+              onMouseEnter={handleMouseEnter4}
+              onMouseLeave={handleMouseLeave4}
+              style={{ transform: opacity4 > 0 ? 'scale(1.05)' : 'scale(1)' }}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                style={{
+                  opacity: opacity4,
+                  background: `radial-gradient(circle at ${position4.x}px ${position4.y}px, rgba(234, 117, 35, 0.3), transparent 100%)`,
+                }}
+              />
+              <div className="px-6 py-4 flex items-center gap-2">
+                <Image
+                  src="/DelvinDocsAI.png"
+                  alt="DelvinDocsAI Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+                <h3 className="text-xl font-bold text-text-primary">DelvinDocs.AI</h3>
+                <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Arrow Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 14.5a.5.5 0 0 1-.5-.5V5.707L1.354 13.854a.5.5 0 0 1-.708-.708L8.293 5H1.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5z"/>
+                  </svg>
+                </span>
+              </div>
+              <div className="px-6 flex items-center gap-2">
+                <p className="text-text-secondary">
+                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                </p>
+              </div>
+              <div className="p-6 flex items-center gap-2">
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+              </div>
+            </a>
+
+
+
+             {/* Project Card 5 */}
+             <a
+              href="https://github.com/hrithikkoduri/GitChat" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              onMouseMove={handleMouseMove5}
+              onMouseEnter={handleMouseEnter5}
+              onMouseLeave={handleMouseLeave5}
+              style={{ transform: opacity5 > 0 ? 'scale(1.05)' : 'scale(1)' }}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                style={{
+                  opacity: opacity5,
+                  background: `radial-gradient(circle at ${position5.x}px ${position5.y}px, rgba(97, 96, 235, 0.3), transparent 100%)`,
+                }}
+              />
+              <div className="px-6 py-4 flex items-center gap-2">
+                <Image
+                  src="/GitChat.png"
+                  alt="GitChat Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+                <h3 className="text-xl font-bold text-text-primary">GitChat</h3>
+                <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Arrow Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 14.5a.5.5 0 0 1-.5-.5V5.707L1.354 13.854a.5.5 0 0 1-.708-.708L8.293 5H1.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5z"/>
+                  </svg>
+                </span>
+              </div>
+              <div className="px-6 flex items-center gap-2">
+                <p className="text-text-secondary">
+                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                </p>
+              </div>
+              <div className="p-6 flex items-center gap-2">
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+              </div>
+            </a>
+
+            {/* Project Card 6 */}
+            <a
+              href="https://github.com/hrithikkoduri/GraphRAG" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              onMouseMove={handleMouseMove6}
+              onMouseEnter={handleMouseEnter6}
+              onMouseLeave={handleMouseLeave6}
+              style={{ transform: opacity6 > 0 ? 'scale(1.05)' : 'scale(1)' }}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                style={{
+                  opacity: opacity6,
+                  background: `radial-gradient(circle at ${position6.x}px ${position6.y}px, rgba(242, 56, 63, 0.3), transparent 100%)`,
+                }}
+              />
+              <div className="px-6 py-4 flex items-center gap-2">
+                <Image
+                  src="/GraphRAG.png"
+                  alt="GraphRAG Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+                <h3 className="text-xl font-bold text-text-primary">GraphRAG</h3>
+                <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Arrow Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 14.5a.5.5 0 0 1-.5-.5V5.707L1.354 13.854a.5.5 0 0 1-.708-.708L8.293 5H1.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5z"/>
+                  </svg>
+                </span>
+              </div>
+              <div className="px-6 flex items-center gap-2">
+                <p className="text-text-secondary">
+                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                </p>
+              </div>
+              <div className="p-6 flex items-center gap-2">
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+              </div>
+            </a>
+ 
+                
 
           </div>
         </div>
