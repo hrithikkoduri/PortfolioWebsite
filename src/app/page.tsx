@@ -1,10 +1,79 @@
 "use client"
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useAnimation, useScroll } from 'framer-motion';
 import SocialLinks from '@/components/SocialLinks';
+
+const experiences = [
+  {
+    company: "Lokally",
+    startDate: "Jan",
+    endDate: "2024",
+    roles: [{
+      title: "Co-Founder, Product Management",
+      duration: "Jan 2024 - Jul 2024",
+      responsibilities: [
+        "Led 6 product development cycles, created product roadmap and go-to-market strategy, onboarded 50+ local eateries in 3 months",
+        "Conducted user research and analysis with 100+ target users to iterate prototype, leading to 80% increase in user engagement",
+        "Gathered qualitative and quantitative metrics/reviews, architecture and crafted wireframes and UI/UX design prototype"
+      ]
+    }]
+  },
+  {
+    company: "Tucson Waters",
+    startDate: "May",
+    endDate: "2023",
+    roles: [{
+      title: "Product Management Intern",
+      duration: "May 2023 - Nov 2023",
+      responsibilities: [
+        "Spearheaded product lifecycle for real-time threat detection mobile app's feature releases, reducing response time by 20%",
+        "Developed strategy, system design and UI/UX to launch an MVP for asset tracking, cutting $50k monthly maintenance costs",
+        "Enhanced feature adoption by 30% through iterative design and feedback loops from user acceptance testing"
+      ]
+    }]
+  },
+  {
+    company: "Media.net",
+    startDate: "Aug",
+    endDate: "2020",
+    roles: [
+      {
+        title: "Associate Product Manager",
+        duration: "Aug 2021 - May 2022",
+        responsibilities: [
+          "Drove product roadmap by managing backlog, sprints and product release for width responsive ads, generating $4.6M revenue",
+          "Developed RESTful APIs and implemented a microservice for a bidding product to optimize bidding strategies, resulting in a 25% increase in win rate for high-value bidder",
+          "Formulated product vision and collaborated cross-functionally with design, engineering, and research teams to launch Direct-to-Search ads, serving 350M+ daily ads"
+        ]
+      },
+      {
+        title: "Product Analyst",
+        duration: "Aug 2020 - Jul 2021",
+        responsibilities: [
+          "Translated product requirements into user stories and used RICE prioritization framework to implement ML based consumer targeting product features, optimizing user experience and increasing ad-click by 34%",
+          "Designed and creative wireframes and prototypes in Figma, performed A/B testing, elevating ad viewability by 9%",
+          "Automated reporting for product performance KPIs, reducing TAT by 72 hours, enabling data-driven product improvements"
+        ]
+      }
+    ]
+  },
+  {
+    company: "Fruit Bowl Digital",
+    startDate: "Jun",
+    endDate: "2019",
+    roles: [{
+      title: "Marketing Analyst Intern",
+      duration: "Jun 2019 - May 2020",
+      responsibilities: [
+        "Applied market research and analysis to find product market fit for 5 early-stage startups, boosting customer traffic by 40%",
+        "Executed 20+ marketing campaigns, leveraging market insights from competitive analysis, achieving 100k+ impressions"
+      ]
+    }]
+  }
+];
 
 export default function Home() {
   const [position1, setPosition1] = useState({ x: 0, y: 0 });
@@ -19,6 +88,33 @@ export default function Home() {
   const [opacity5, setOpacity5] = useState(0);
   const [position6, setPosition6] = useState({ x: 0, y: 0 });
   const [opacity6, setOpacity6] = useState(0);
+
+  // Add state for tracking which experience is in view
+  const [activeExperience, setActiveExperience] = useState<number | null>(null);
+  const experienceRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '-20% 0px',
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = experienceRefs.current.findIndex(ref => ref === entry.target);
+          setActiveExperience(index);
+        }
+      });
+    }, options);
+
+    experienceRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove1 = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -275,9 +371,9 @@ export default function Home() {
               <div className="p-6 flex items-center gap-2">
                 <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langgraph</span>
                 <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Next.js</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Playwright</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">SQLite</span>
                 <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">FastAPI</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Pillow</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Matplotlib</span>
               </div>
             </a>
 
@@ -366,15 +462,14 @@ export default function Home() {
               </div>
               <div className="px-6 flex items-center gap-2">
                 <p className="text-text-secondary">
-                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                DelvInDocs.AI simplifies documentation understanding by scraping content and providing instant answers with relevant code snippets.
                 </p>
               </div>
               <div className="p-6 flex items-center gap-2">
                 <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">DeepLake</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Streamlit</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">BeautifulSoup</span>
               </div>
             </a>
 
@@ -416,15 +511,15 @@ export default function Home() {
               </div>
               <div className="px-6 flex items-center gap-2">
                 <p className="text-text-secondary">
-                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                GitChat transforms GitHub navigation into a conversation, letting users explore, query, and uncover insights effortlessly.
                 </p>
               </div>
               <div className="p-6 flex items-center gap-2">
                 <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">DeepLake</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Next.js</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">FastAPI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">SQLite</span>
               </div>
             </a>
 
@@ -464,20 +559,135 @@ export default function Home() {
               </div>
               <div className="px-6 flex items-center gap-2">
                 <p className="text-text-secondary">
-                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                GraphRAG transforms chatbots by integrating Knowledge Graphs for relationship-aware context, delivering smarter, and more accurate responses.
                 </p>
               </div>
               <div className="p-6 flex items-center gap-2">
                 <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
-                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Neo4j</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">FastAPI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Next.js</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Cypher</span>
               </div>
             </a>
  
                 
 
+          </div>
+        </div>
+
+        {/* Work Experience Section */}
+        <div className="max-w-5xl mx-auto mt-20 py-10">
+          <h2 className="text-4xl font-bold text-text-primary drop-shadow-sm [text-shadow:_0_2px_8px_rgb(0_0_0_/_20%)]">
+            Work Experience
+          </h2>
+          <p className="text-text-primary text-xl md:text-xl leading-relaxed py-10">
+            Throughout my career, I've been fortunate to collaborate with exceptional companies and talented professionals on impactful projects. 
+            Each role has shaped my growth and contributed to my expertise in software development and product management.
+          </p>
+          
+          <div className="mt-10 relative">
+            {/* Timeline Line */}
+            <div className="absolute left-[60px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-card-border via-card-border to-transparent" />
+            
+            <div className="space-y-16">
+              {experiences.map((experience, index) => (
+                <motion.div
+                  key={index}
+                  ref={el => experienceRefs.current[index] = el}
+                  className="experience-item group relative"
+                  data-index={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    scale: activeExperience === index ? 1.02 : 1
+                  }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  
+                >
+                  
+                  {/* Date Display */}
+                  <div className="absolute -left-32 top-1/2 -translate-y-1/2 flex items-center">
+                    <motion.div 
+                      className="w-36 h-14 rounded-xl bg-card-bg/80 backdrop-blur-sm border border-card-border flex flex-col items-center justify-center shadow-lg shadow-black/5 dark:shadow-black/20"
+                      animate={{
+                        scale: activeExperience === index ? 1.1 : 1,
+                      }}
+                    >
+                      <div className="text-xs text-center leading-tight">
+                        <div className="text-[10px] text-text-secondary uppercase tracking-wider">Duration</div>
+                        <div className="font-medium text-text-primary whitespace-nowrap">
+                          {experience.roles[0].duration}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Company Logo Space */}
+                  <div className="absolute left-[30px] top-1/2 -translate-y-1/2">
+                    <div className="w-20 h-20 rounded-2xl bg-card-bg/80 backdrop-blur-sm border border-card-border flex items-center justify-center overflow-hidden shadow-lg shadow-black/5 dark:shadow-black/20">
+                      <Image
+                        src={`/${experience.company === 'Media.net' ? 'media_net' : 
+                              experience.company === 'Tucson Waters' ? 'Tucson_waters' :
+                              experience.company === 'Fruit Bowl Digital' ? 'FBD' : 
+                              'Lokally'}.png`}
+                        alt={`${experience.company} logo`}
+                        width={80}
+                        height={80}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Content Card - adjust margin */}
+                  <div className="ml-40">
+                    <motion.div 
+                      className="relative bg-card-bg/80 backdrop-blur-sm rounded-2xl border border-card-border p-8 overflow-hidden transition-all duration-300"
+                      animate={{
+                        scale: activeExperience === index ? 1.02 : 1,
+                        boxShadow: activeExperience === index 
+                          ? '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
+                          : '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                      }}
+                    >
+                      <div
+                        className="pointer-events-none absolute -inset-[1px] transition-opacity duration-500 ease-in-out rounded-2xl"
+                        style={{
+                          opacity: activeExperience === index ? 0.15 : 0,
+                          background: `radial-gradient(800px circle at 50% 50%, ${
+                            experience.company === 'Lokally' 
+                              ? 'rgba(16, 185, 129, 0.9)' // Green for Lokally
+                              : experience.company === 'Tucson Waters' 
+                              ? 'rgba(0, 119, 182, 0.9)' // Blue for Tucson Waters
+                              : experience.company === 'Media.net'
+                              ? 'rgba(234, 117, 35, 0.9)' // Orange for Media.net
+                              : 'rgba(255, 255, 0, 0.9)' // Yellow for Fruit Bowl Digital
+                          }, transparent 100%)`,
+                        }}
+                      />
+                      <div className="relative z-10">
+                        <h3 className="text-2xl font-bold text-text-primary">{experience.company}</h3>
+                        <div className="space-y-6 mt-4">
+                          {experience.roles.map((role, roleIndex) => (
+                            <div key={roleIndex}>
+                              <h4 className="text-lg font-semibold text-text-primary mb-3">{role.title}</h4>
+                              <ul className="list-disc space-y-3 ml-5">
+                                {role.responsibilities.map((item, i) => (
+                                  <li key={i} className="text-base text-text-secondary pl-2">
+                                    <span className="relative -left-2">{item}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </main>

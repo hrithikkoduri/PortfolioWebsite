@@ -10,6 +10,7 @@
   --text-primary: #171717;
   --text-secondary: #4b5563;
   --accent: #10b981;
+  --card-border-active: rgba(var(--card-border-rgb), 0.8);
 }
 
 .dark {
@@ -52,4 +53,30 @@ body {
   backdrop-filter: blur(16px);
   border: 1px solid var(--card-border);
   border-radius: 1rem;
+}
+
+/* Add after line 56 */
+.experience-item {
+  transition: all 0.5s ease;
+}
+
+.experience-item:hover {
+  --accent: rgba(var(--card-border-rgb), 0.1);
+}
+
+.experience-item[data-active="true"] {
+  z-index: 10;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.05);
+  }
+}
+
+.experience-item[data-active="true"] .timeline-dot {
+  animation: subtle-pulse 3s infinite;
 }

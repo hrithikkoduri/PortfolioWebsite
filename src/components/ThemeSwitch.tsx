@@ -19,16 +19,14 @@ export default function ThemeSwitch() {
   return (
     <motion.div 
       className="theme-switch h-full flex items-center px-2 shadow-lg shadow-black/5 dark:shadow-black/20"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
       <div className="flex items-center gap-2">
         <button
           onClick={() => setTheme('light')}
-          className={`hover-effect p-1.5 rounded-lg ${
-            theme === 'light' ? 'active-state' : ''
-          }`}
+          className={`hover-effect p-1.5 rounded-lg ${theme === 'light' ? 'active-state' : ''}`}
         >
           {/* Sun icon */}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -45,9 +43,7 @@ export default function ThemeSwitch() {
         </button>
         <button
           onClick={() => setTheme('dark')}
-          className={`hover-effect p-1.5 rounded-lg ${
-            theme === 'dark' ? 'active-state' : ''
-          }`}
+          className={`hover-effect p-1.5 rounded-lg ${theme === 'dark' ? 'active-state' : ''}`}
         >
           {/* Moon icon */}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -56,9 +52,7 @@ export default function ThemeSwitch() {
         </button>
         <button
           onClick={() => setTheme('system')}
-          className={`hover-effect p-1.5 rounded-lg ${
-            theme === 'system' ? 'active-state' : ''
-          }`}
+          className={`hover-effect p-1.5 rounded-lg ${theme === 'system' ? 'active-state' : ''}`}
         >
           {/* System icon */}
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
