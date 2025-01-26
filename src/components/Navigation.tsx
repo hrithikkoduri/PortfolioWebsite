@@ -14,10 +14,10 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-40 px-4 py-4 mt-10">
+    <nav className="fixed top-0 left-0 right-0 z-40 px-4 py-4 mt-5">
       <div className="max-w-5xl mx-auto">
-        <div className="flex justify-between items-center">
-          <div className="relative h-[44px] px-4 rounded-xl bg-card-bg border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 flex items-center">
+        <div className="flex justify-between items-center gap-4">
+          <div className="relative h-[44px] px-4 rounded-xl backdrop-blur-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 flex items-center">
             <div className="flex items-center gap-4">
               {/* Logo/Home */}
               <Link href="/">

@@ -40,3 +40,16 @@ body {
 .active-state {
   @apply text-[#10b981] bg-card-border;
 }
+
+.navbar {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+}
+
+.theme-switch {
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+}

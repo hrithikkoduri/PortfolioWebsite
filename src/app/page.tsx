@@ -7,26 +7,56 @@ import { motion } from 'framer-motion';
 import SocialLinks from '@/components/SocialLinks';
 
 export default function Home() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
+  const [position1, setPosition1] = useState({ x: 0, y: 0 });
+  const [opacity1, setOpacity1] = useState(0);
+  const [position2, setPosition2] = useState({ x: 0, y: 0 });
+  const [opacity2, setOpacity2] = useState(0);
+  const [position3, setPosition3] = useState({ x: 0, y: 0 });
+  const [opacity3, setOpacity3] = useState(0);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove1 = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    setPosition1({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
 
-  const handleMouseEnter = () => {
-    setOpacity(0.6);
+  const handleMouseEnter1 = () => {
+    setOpacity1(0.6);
   };
 
-  const handleMouseLeave = () => {
-    setOpacity(0);
+  const handleMouseLeave1 = () => {
+    setOpacity1(0);
+  };
+
+  const handleMouseMove2 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition2({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleMouseEnter2 = () => {
+    setOpacity2(0.6);
+  };
+
+  const handleMouseLeave2 = () => {
+    setOpacity2(0);
+  };
+
+  const handleMouseMove3 = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setPosition3({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleMouseEnter3 = () => {
+    setOpacity3(0.6);
+  };
+
+  const handleMouseLeave3 = () => {
+    setOpacity3(0);
   };
 
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-24 px-8 mt-10">
+      <main className="min-h-screen pt-24 px-8 ">
         <div className="max-w-5xl mx-auto py-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Text Content */}
@@ -98,7 +128,7 @@ export default function Home() {
         </div>
 
         {/* Projects Section */}
-        <div className="max-w-5xl mx-auto mt-24 py-10">
+        <div className="max-w-5xl mx-auto mt-20 py-10">
           <h2 className="text-4xl font-bold text-text-primary drop-shadow-sm [text-shadow:_0_2px_8px_rgb(0_0_0_/_20%)]">
             Projects
           </h2>
@@ -109,38 +139,38 @@ export default function Home() {
             This journey became my way of proving to myself that I could create meaningful things, 
             regardless of the circumstances.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Project Card 1 */}
             <a
               href="https://github.com/hrithikkoduri/WebRover" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300"
-              onMouseMove={handleMouseMove}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              style={{ transform: opacity > 0 ? 'scale(1.05)' : 'scale(1)' }}
+              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              onMouseMove={handleMouseMove1}
+              onMouseEnter={handleMouseEnter1}
+              onMouseLeave={handleMouseLeave1}
+              style={{ transform: opacity1 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
                 className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
                 style={{
-                  opacity,
-                  background: `radial-gradient(circle at ${position.x}px ${position.y}px, rgba(39, 118, 245, 0.8), transparent 100%)`,
+                  opacity: opacity1,
+                  background: `radial-gradient(circle at ${position1.x}px ${position1.y}px, rgba(186, 85, 255, 0.8), transparent 100%)`,
                 }}
               />
               <div className="px-6 py-4 flex items-center gap-2">
                 <Image
-                  src="/WebRover.png"
+                  src="/WebRover_.png"
                   alt="WebRover Logo"
                   width={40}
                   height={40}
                   className="object-contain"
                 />
-                <h3 className="text-xl font-bold text-text-primary mb-2">WebRover</h3>
+                <h3 className="text-xl font-bold text-text-primary">WebRover</h3>
                 <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   {/* Arrow Icon */}
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-up-right" viewBox="0 0 16 16">
-                    <path fillRule="evenodd" d="M14 2.5a.5.5 0 0 1-.5.5H3.707l9.147 9.146a.5.5 0 0 1-.708.708L3 3.707V13.5a.5.5 0 0 1-1 0v-11A.5.5 0 0 1 2.5 2h11a.5.5 0 0 1 .5.5z"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 14.5a.5.5 0 0 1-.5-.5V5.707L1.354 13.854a.5.5 0 0 1-.708-.708L8.293 5H1.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5z"/>
                   </svg>
                 </span>
               </div>
@@ -159,24 +189,103 @@ export default function Home() {
             </a>
 
             {/* Project Card 2 */}
-            <motion.div 
-              className="group relative bg-card-bg/80 backdrop-blur-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
+            <a
+              href="https://github.com/hrithikkoduri/TalkQL" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              onMouseMove={handleMouseMove2}
+              onMouseEnter={handleMouseEnter2}
+              onMouseLeave={handleMouseLeave2}
+              style={{ transform: opacity2 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-text-primary mb-2">Project Name</h3>
-                <p className="text-text-secondary mb-4">
-                  Brief description of the project and what technologies were used.
-                </p>
-                <div className="flex gap-2">
-                  <span className="px-3 py-1 text-sm bg-card-border rounded-xl text-text-primary">Python</span>
-                  <span className="px-3 py-1 text-sm bg-card-border rounded-xl text-text-primary">FastAPI</span>
-                  <span className="px-3 py-1 text-sm bg-card-border rounded-xl text-text-primary">PostgreSQL</span>
-                </div>
+              <div
+                className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                style={{
+                  opacity: opacity2,
+                  background: `radial-gradient(circle at ${position2.x}px ${position2.y}px, rgba(39, 118, 245, 0.8), transparent 100%)`,
+                }}
+              />
+              <div className="px-6 py-4 flex items-center gap-2">
+                <Image
+                  src="/TalkQL_.png"
+                  alt="TalkQL Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+                <h3 className="text-xl font-bold text-text-primary">TalkQL</h3>
+                <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Arrow Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 14.5a.5.5 0 0 1-.5-.5V5.707L1.354 13.854a.5.5 0 0 1-.708-.708L8.293 5H1.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5z"/>
+                  </svg>
+                </span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.div>
+              <div className="px-6 flex items-center gap-2">
+                <p className="text-text-secondary">
+                TalkQL turns your casual conversations into SQL queries, providing clear answers with intuitive visualizations as if you were chatting with a friend.
+                </p>
+              </div>
+              <div className="p-6 flex items-center gap-2">
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langgraph</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Next.js</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Playwright</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">FastAPI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Pillow</span>
+              </div>
+            </a>
+
+                {/* Project Card 3 */}
+            <a
+              href="https://github.com/hrithikkoduri/ConvoPro" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              onMouseMove={handleMouseMove3}
+              onMouseEnter={handleMouseEnter3}
+              onMouseLeave={handleMouseLeave3}
+              style={{ transform: opacity3 > 0 ? 'scale(1.05)' : 'scale(1)' }}
+            >
+              <div
+                className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+                style={{
+                  opacity: opacity3,
+                  background: `radial-gradient(circle at ${position3.x}px ${position3.y}px, rgba(255, 255, 0, 0.8), transparent 100%)`,
+                }}
+              />
+              <div className="px-6 py-4 flex items-center gap-2">
+                <Image
+                  src="/ConvoPro.png"
+                  alt="ConvoPro Logo"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                />
+                <h3 className="text-xl font-bold text-text-primary">ConvoPro</h3>
+                <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Arrow Icon */}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 14.5a.5.5 0 0 1-.5-.5V5.707L1.354 13.854a.5.5 0 0 1-.708-.708L8.293 5H1.5a.5.5 0 0 1 0-1h9a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5z"/>
+                  </svg>
+                </span>
+              </div>
+              <div className="px-6 flex items-center gap-2">
+                <p className="text-text-secondary">
+                An AI assistant that leverages real-time speech-to-speech interactions, streamlining customer service, automating responses, and scheduling appointments.
+                </p>
+              </div>
+              <div className="p-6 flex items-center gap-2">
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Langchain</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">OpenAI</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Twilio</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Make.com</span>
+                <span className="px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">Websockets</span>
+              </div>
+            </a>
+
+
+
           </div>
         </div>
       </main>

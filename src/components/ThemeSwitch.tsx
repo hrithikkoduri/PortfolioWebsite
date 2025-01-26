@@ -18,7 +18,7 @@ export default function ThemeSwitch() {
 
   return (
     <motion.div 
-      className="h-full bg-card-bg border border-card-border rounded-xl shadow-lg flex items-center px-2"
+      className="theme-switch h-full flex items-center px-2 shadow-lg shadow-black/5 dark:shadow-black/20"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
