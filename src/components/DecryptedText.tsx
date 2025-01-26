@@ -32,12 +32,13 @@ interface DecryptedTextProps {
   encryptedClassName?: string
   parentClassName?: string
   animateOn?: "view" | "hover"
+  onAnimationComplete?: () => void;
 }
 
 export default function DecryptedText({
   text,
-  speed = 50,
-  maxIterations = 10,
+  speed = 200,
+  maxIterations = 1,
   sequential = false,
   revealDirection = 'start',
   useOriginalCharsOnly = false,
@@ -46,6 +47,7 @@ export default function DecryptedText({
   parentClassName = '',
   encryptedClassName = '',
   animateOn = 'hover',
+  onAnimationComplete,
   ...props
 }: DecryptedTextProps) {
   const [displayText, setDisplayText] = useState(text)
@@ -140,6 +142,7 @@ export default function DecryptedText({
             } else {
               clearInterval(interval)
               setIsScrambling(false)
+              onAnimationComplete?.()
               return prevRevealed
             }
           } else {
@@ -149,6 +152,7 @@ export default function DecryptedText({
               clearInterval(interval)
               setIsScrambling(false)
               setDisplayText(text)
+              onAnimationComplete?.()
             }
             return prevRevealed
           }
@@ -163,7 +167,7 @@ export default function DecryptedText({
     return () => {
       if (interval) clearInterval(interval)
     }
-  }, [isHovering, text, speed, maxIterations, sequential, revealDirection, characters, useOriginalCharsOnly])
+  }, [isHovering, text, speed, maxIterations, sequential, revealDirection, characters, useOriginalCharsOnly, onAnimationComplete])
 
   useEffect(() => {
     if (animateOn !== 'view') return
