@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Caveat } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
-import ThemeSwitch from '@/components/ThemeSwitch'
 import BackgroundParticles from "@/components/BackgroundParticles";
 
 const geistSans = Geist({

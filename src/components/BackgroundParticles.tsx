@@ -13,6 +13,8 @@ export default function BackgroundParticles() {
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
     
+    if (!ctx) return
+    
     // Set canvas size
     const setCanvasSize = () => {
       canvas.width = window.innerWidth

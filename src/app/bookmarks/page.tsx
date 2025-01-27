@@ -63,7 +63,6 @@ const categories = Array.from(new Set(bookmarks.map(bookmark => bookmark.categor
 
 export default function Bookmarks() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const filteredBookmarks = selectedCategory
     ? bookmarks.filter(bookmark => bookmark.category === selectedCategory)
@@ -78,7 +77,7 @@ export default function Bookmarks() {
           Things on the internet I really enjoyed watching or reading
           </h1>
           <p className="text-text-primary text-lg md:text-lg leading-relaxed mb-12">
-          These don't follow any particular category, it's just really good articles by awesome people on the internet. I hope you enjoy them as much as I did.
+          These don&apos;t follow any particular category, it&apos;s just really good articles by awesome people on the internet. I hope you enjoy them as much as I did.
           </p>
 
           {/* Category Filter */}
@@ -116,8 +115,7 @@ export default function Bookmarks() {
                 animate={{ opacity: 1, y: 0 }}
                 
                 transition={{ delay: index * 0.1 }}
-                onHoverStart={() => setHoveredIndex(index)}
-                onHoverEnd={() => setHoveredIndex(null)}
+    
               >
                 <Link href={bookmark.url} target="_blank" rel="noopener noreferrer">
                   <div className="group relative bg-card-bg/20 backdrop-blur-sm rounded-xl border border-card-border/40 p-6 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-black/5 dark:shadow-black/20">
@@ -125,7 +123,7 @@ export default function Bookmarks() {
                       <h2 className="text-xl font-semibold text-text-primary group-hover:text-blue-400 transition-colors duration-200">
                         {bookmark.title}
                       </h2>
-                      <span className="text-sm text-text-secondary">{bookmark.date}</span>
+                      <span className="text-sm text-text-secondary">{bookmark.category}</span>
                     </div>
                     
                     <p className="text-text-secondary mb-4">{bookmark.description}</p>

@@ -77,7 +77,6 @@ const categories = Array.from(new Set(papers.map(paper => paper.category)));
 
 export default function PaperShelf() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const filteredPapers = selectedCategory
     ? papers.filter(paper => paper.category === selectedCategory)
@@ -130,8 +129,6 @@ export default function PaperShelf() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                onHoverStart={() => setHoveredIndex(index)}
-                onHoverEnd={() => setHoveredIndex(null)}
               >
                 <Link href={paper.url} target="_blank" rel="noopener noreferrer">
                   <div className="group relative bg-card-bg/20 backdrop-blur-sm rounded-xl border border-card-border/40 p-6 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-black/5 dark:shadow-black/20">

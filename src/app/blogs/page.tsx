@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -45,7 +44,6 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default function Blogs() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -70,8 +68,7 @@ export default function Blogs() {
                     delay: index * 0.1,
                     duration: 0.2
                   }}
-                  onHoverStart={() => setHoveredIndex(index)}
-                  onHoverEnd={() => setHoveredIndex(null)}
+                  
                   whileHover={{ 
                     scale: 1.02,
                     boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',

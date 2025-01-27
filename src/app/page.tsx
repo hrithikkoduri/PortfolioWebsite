@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Image from 'next/image';
-import { motion, useAnimation, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import SocialLinks from '@/components/SocialLinks';
 import Recommendations from '@/components/Recommendations';
 import Footer from '@/components/Footer';
@@ -118,7 +118,7 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  const handleMouseMove1 = (e) => {
+  const handleMouseMove1 = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition1({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
@@ -131,7 +131,7 @@ export default function Home() {
     setOpacity1(0);
   };
 
-  const handleMouseMove2 = (e) => {
+  const handleMouseMove2 = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition2({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
@@ -144,7 +144,7 @@ export default function Home() {
     setOpacity2(0);
   };
 
-  const handleMouseMove3 = (e) => {
+  const handleMouseMove3 = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition3({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };
@@ -157,7 +157,7 @@ export default function Home() {
     setOpacity3(0);
   };
 
-  const handleMouseMove4 = (e) => {
+  const handleMouseMove4 = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition4({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };  
@@ -170,7 +170,7 @@ export default function Home() {
     setOpacity4(0);
   };
 
-  const handleMouseMove5 = (e) => {
+  const handleMouseMove5 = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition5({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };  
@@ -183,7 +183,7 @@ export default function Home() {
     setOpacity5(0);
   };
 
-  const handleMouseMove6 = (e) => {
+  const handleMouseMove6 = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setPosition6({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };  
@@ -206,19 +206,19 @@ export default function Home() {
             <div className="flex-1">
               <br />
               <h1 className="text-6xl font-bold text-text-primary mb-4 drop-shadow-sm [text-shadow:_0_3px_10px_rgb(0_0_0_/_30%)]">
-                Hello, I'm Hrithik Koduri!
+                Hello, I&apos;m Hrithik Koduri!
               </h1>
               <div className="space-y-6">
                 <p className="text-text-primary text-xl md:text-xl leading-relaxed">
-                  Welcome to my corner of the internet! I'm an aspiring Product Manager with a passion for crafting exceptional products.
+                  Welcome to my corner of the internet! I&apos;m an aspiring Product Manager with a passion for crafting exceptional products.
                 </p>
                 
                 <p className="text-text-primary text-xl md:text-xl leading-relaxed">
-                  Lately, I've been diving deep into Generative AI, experimenting and pushing the boundaries of what's possible. This page is a list of my creations and musings on technology and beyond.
+                  Lately, I&apos;ve been diving deep into Generative AI, experimenting and pushing the boundaries of what&apos;s possible. This page is a list of my creations and musings on technology and beyond.
                 </p>
 
                 <p className="text-text-primary text-xl md:text-xl leading-relaxed">
-                  Feel free to reach out if you'd like to learn more about me or just have a chat!
+                  Feel free to reach out if you&apos;d like to learn more about me or just have a chat!
                 </p>
                 <div className="flex">
                   <SocialLinks />
@@ -261,7 +261,7 @@ export default function Home() {
                       Eller College of Management
                     </p>
                     <p className="text-sm mt-2 text-text-secondary">
-                      Dual Masters in <span className="text-text-primary font-medium">MBA</span> and <span className="text-text-primary font-medium">MSMIS</span>
+                      Dual Masters - <span className="text-text-primary font-medium">MBA</span> and <span className="text-text-primary font-medium">MS-MIS</span>
                     </p>
                   </div>
                 </div>
@@ -285,13 +285,13 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Project Card 1 */}
             <a
-              href="https://github.com/hrithikkoduri/WebRover" 
+              href="https://github.com/hrithikkoduri/WebRover"
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
-              onMouseMove={handleMouseMove1}
-              onMouseEnter={handleMouseEnter1}
-              onMouseLeave={handleMouseLeave1}
+              onMouseMove={(e) => handleMouseMove1(e)}
+              onMouseEnter={() => handleMouseEnter1()}
+              onMouseLeave={() => handleMouseLeave1()}
               style={{ transform: opacity1 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
@@ -337,9 +337,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
-              onMouseMove={handleMouseMove2}
-              onMouseEnter={handleMouseEnter2}
-              onMouseLeave={handleMouseLeave2}
+              onMouseMove={(e) => handleMouseMove2(e)}
+              onMouseEnter={() => handleMouseEnter2()}
+              onMouseLeave={() => handleMouseLeave2()}
               style={{ transform: opacity2 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
@@ -385,9 +385,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
-              onMouseMove={handleMouseMove3}
-              onMouseEnter={handleMouseEnter3}
-              onMouseLeave={handleMouseLeave3}
+              onMouseMove={(e) => handleMouseMove3(e)}
+              onMouseEnter={() => handleMouseEnter3()}
+              onMouseLeave={() => handleMouseLeave3()}
               style={{ transform: opacity3 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
@@ -434,9 +434,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
-              onMouseMove={handleMouseMove4}
-              onMouseEnter={handleMouseEnter4}
-              onMouseLeave={handleMouseLeave4}
+              onMouseMove={(e) => handleMouseMove4(e)}
+              onMouseEnter={() => handleMouseEnter4()}
+              onMouseLeave={() => handleMouseLeave4()}
               style={{ transform: opacity4 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
@@ -483,9 +483,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
-              onMouseMove={handleMouseMove5}
-              onMouseEnter={handleMouseEnter5}
-              onMouseLeave={handleMouseLeave5}
+              onMouseMove={(e) => handleMouseMove5(e)}
+              onMouseEnter={() => handleMouseEnter5()}
+              onMouseLeave={() => handleMouseLeave5()}
               style={{ transform: opacity5 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
@@ -531,9 +531,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
-              onMouseMove={handleMouseMove6}
-              onMouseEnter={handleMouseEnter6}
-              onMouseLeave={handleMouseLeave6}
+              onMouseMove={(e) => handleMouseMove6(e)}
+              onMouseEnter={() => handleMouseEnter6()}
+              onMouseLeave={() => handleMouseLeave6()}
               style={{ transform: opacity6 > 0 ? 'scale(1.05)' : 'scale(1)' }}
             >
               <div
@@ -584,7 +584,7 @@ export default function Home() {
             Work Experience
           </h2>
           <p className="text-text-primary text-xl md:text-xl leading-relaxed py-10">
-            Throughout my career, I've been fortunate to collaborate with exceptional companies and talented professionals on impactful projects. 
+            Throughout my career, I&apos;ve been fortunate to collaborate with exceptional companies and talented professionals on impactful projects. 
             Each role has shaped my growth and contributed to my expertise in software development and product management.
           </p>
           
@@ -596,7 +596,11 @@ export default function Home() {
               {experiences.map((experience, index) => (
                 <motion.div
                   key={index}
-                  ref={el => experienceRefs.current[index] = el}
+                  ref={(el) => {
+                    if (el) {
+                      experienceRefs.current[index] = el;
+                    }
+                  }}
                   className="experience-item group relative"
                   data-index={index}
                   initial={{ opacity: 0, y: 20 }}

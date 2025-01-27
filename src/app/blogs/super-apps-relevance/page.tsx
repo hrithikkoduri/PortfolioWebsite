@@ -3,8 +3,7 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+
 
 export default function SuperApps() {
   return (
@@ -43,7 +42,7 @@ export default function SuperApps() {
                   A super app is a mobile application that serves as an all-in-one platform, providing a wide range of services that typically require separate apps. The idea of a super app was popularized by WeChat in China, which started as a messaging app and evolved into a comprehensive digital ecosystem encompassing social media, payments, e-commerce, gaming, and more.
                 </p>
                 <p className="text-text-secondary text-m leading-relaxed mt-4">
-                  Super apps are designed to be a one-stop solution for users' digital needs, integrating numerous functionalities into a single user interface. This integration allows users to perform various tasks, such as booking a ride, ordering food, making payments, and chatting with friends, all within the same app.
+                  Super apps are designed to be a one-stop solution for users&apos; digital needs, integrating numerous functionalities into a single user interface. This integration allows users to perform various tasks, such as booking a ride, ordering food, making payments, and chatting with friends, all within the same app.
                 </p>
               </section>
 
@@ -57,7 +56,7 @@ export default function SuperApps() {
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">2. Integrated Ecosystem</h3>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  The strength of a super app lies in its integrated ecosystem. Services within the app are interconnected, providing a seamless user experience. For example, a user can make a purchase in the app's marketplace and pay for it using the app's payment service, all without leaving the platform. This integration enhances user satisfaction and loyalty.
+                  The strength of a super app lies in its integrated ecosystem. Services within the app are interconnected, providing a seamless user experience. For example, a user can make a purchase in the app&apos;s marketplace and pay for it using the app&apos;s payment service, all without leaving the platform. This integration enhances user satisfaction and loyalty.
                 </p>
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">3. Enhanced User Engagement</h3>
@@ -99,7 +98,7 @@ export default function SuperApps() {
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">3. Apple</h3>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  Apple's ecosystem, while not a super app, offers a high level of integration across its services. Apple Pay, Apple Music, Apple TV+, and other services are seamlessly connected through iOS. Although these services are accessible through different apps, the integration within the Apple ecosystem provides a cohesive user experience similar to that of a super app.
+                  Apple&apos;s ecosystem, while not a super app, offers a high level of integration across its services. Apple Pay, Apple Music, Apple TV+, and other services are seamlessly connected through iOS. Although these services are accessible through different apps, the integration within the Apple ecosystem provides a cohesive user experience similar to that of a super app.
                 </p>
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">4. Amazon</h3>
@@ -155,7 +154,7 @@ export default function SuperApps() {
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">Data Privacy Benefits</h3>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  Niche companies often handle less data compared to super apps, reducing the risk of large-scale data breaches. Users might feel more secure knowing that their data is compartmentalized across different specialized services rather than being aggregated within a single super app. This distribution of data can alleviate privacy concerns, as breaches in one app do not compromise all aspects of a user's digital life.
+                  Niche companies often handle less data compared to super apps, reducing the risk of large-scale data breaches. Users might feel more secure knowing that their data is compartmentalized across different specialized services rather than being aggregated within a single super app. This distribution of data can alleviate privacy concerns, as breaches in one app do not compromise all aspects of a user&apos;s digital life.
                 </p>
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">Agility and Innovation</h3>
@@ -171,12 +170,12 @@ export default function SuperApps() {
               <section>
                 <h2 className="text-2xl font-bold text-text-primary mt-12 mb-6">The Indian Market: A New Era for Super Apps?</h2>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  The recent collaboration between Jio and BlackRock to create a super app, along with Adani's development of Adani One, raises intriguing questions about the future of super apps in India. Much like the US market, which has seen a rise in specialized apps catering to specific needs, India is experiencing a similar trend with high internet penetration and a growing demand for specialized services. This begs the question: is this the right time for super apps to flourish in India, or has the opportunity passed?
+                  The recent collaboration between Jio and BlackRock to create a super app, along with Adani&apos;s development of Adani One, raises intriguing questions about the future of super apps in India. Much like the US market, which has seen a rise in specialized apps catering to specific needs, India is experiencing a similar trend with high internet penetration and a growing demand for specialized services. This begs the question: is this the right time for super apps to flourish in India, or has the opportunity passed?
                 </p>
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">Segmentation and Specialization in the Indian Market</h3>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  India's digital landscape has evolved rapidly, with high internet penetration and an increasing number of consumers accessing online services. This growth has led to the rise of specialized companies offering niche services, much like in other parts of the world. These niche players have carved out significant market shares by providing tailored solutions that meet the specific needs of their users.
+                  India&apos;s digital landscape has evolved rapidly, with high internet penetration and an increasing number of consumers accessing online services. This growth has led to the rise of specialized companies offering niche services, much like in other parts of the world. These niche players have carved out significant market shares by providing tailored solutions that meet the specific needs of their users.
                 </p>
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">Challenges for Super Apps</h3>
@@ -189,14 +188,14 @@ export default function SuperApps() {
 
                 <h3 className="text-xl font-bold text-text-primary mt-8 mb-4">The Timing for Super Apps</h3>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  The question then arises: is this the golden time for super apps in India, or has the moment passed? While the market is indeed more segmented, there are still opportunities for super apps to succeed. India's vast and diverse population, coupled with its rapid digital growth, creates a unique environment where a well-executed super app could thrive.
+                  The question then arises: is this the golden time for super apps in India, or has the moment passed? While the market is indeed more segmented, there are still opportunities for super apps to succeed. India&apos;s vast and diverse population, coupled with its rapid digital growth, creates a unique environment where a well-executed super app could thrive.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-2xl font-bold text-text-primary mt-12 mb-6">Conclusion</h2>
                 <p className="text-text-secondary text-m leading-relaxed">
-                  India's digital market is at a crossroads. While the rise of specialized services presents a challenge, it also highlights the need for innovative solutions that can unify these offerings. Jio's super app and Adani One have the potential to redefine the market by providing a comprehensive platform that meets diverse consumer needs. However, their success will depend on their ability to offer superior integration, convenience, and value compared to the existing specialized apps. The golden time for super apps in India may not be gone, but it requires a strategic approach to capture the market's evolving demands.
+                  India&apos;s digital market is at a crossroads. While the rise of specialized services presents a challenge, it also highlights the need for innovative solutions that can unify these offerings. Jio&apos;s super app and Adani One have the potential to redefine the market by providing a comprehensive platform that meets diverse consumer needs. However, their success will depend on their ability to offer superior integration, convenience, and value compared to the existing specialized apps. The golden time for super apps in India may not be gone, but it requires a strategic approach to capture the market&apos;s evolving demands.
                 </p>
               </section>
 

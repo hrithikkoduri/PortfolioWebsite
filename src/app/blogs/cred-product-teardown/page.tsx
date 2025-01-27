@@ -3,7 +3,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function CREDTeardown() {
@@ -53,7 +52,7 @@ export default function CREDTeardown() {
                 </p>
 
                 <p className="text-text-secondary text-m leading-relaxed mt-4">
-                  From a business perspective you might wonder what is so special about CRED. In fact, you might feel even more suspicious about CRED's operations and its business model when you take a deeper look at its financials. CRED has incurred losses of ₹1279 CR in FY22 with a revenue of ₹422 CR. The answer lies in the potential of CRED's user base which I will discuss more in my conclusion.
+                  From a business perspective you might wonder what is so special about CRED. In fact, you might feel even more suspicious about CRED&apos;s operations and its business model when you take a deeper look at its financials. CRED has incurred losses of ₹1279 CR in FY22 with a revenue of ₹422 CR. The answer lies in the potential of CRED&apos;s user base which I will discuss more in my conclusion.
                 </p>
               </section>
 
@@ -138,7 +137,7 @@ export default function CREDTeardown() {
                 </ul>
 
                 <p className="text-text-secondary text-m leading-relaxed mt-6">
-                  With the rising popularity of stock investments in India, CRED Finance is positioned to become a valuable tool for users looking to invest in stocks while maintaining the app's core principles of simplicity, convenience, and trustworthiness.
+                  With the rising popularity of stock investments in India, CRED Finance is positioned to become a valuable tool for users looking to invest in stocks while maintaining the app&apos;s core principles of simplicity, convenience, and trustworthiness.
                 </p>
               </section>
 
@@ -288,7 +287,7 @@ export default function CREDTeardown() {
                         <ul className="list-disc pl-6 space-y-2 text-text-secondary text-m">
                           <li>Design the Personalized Financial Consulting feature</li>
                           <li>Develop a system for users to request consultations with financial experts</li>
-                          <li>Integrate the feature with the user's portfolio and Watchlist</li>
+                          <li>Integrate the feature with the user&apos;s portfolio and Watchlist</li>
                         </ul>
                       </div>
 
@@ -296,8 +295,8 @@ export default function CREDTeardown() {
                         <h4 className="text-xl font-semibold text-text-primary mb-2">Acceptance Criteria:</h4>
                         <ul className="list-disc pl-6 space-y-2 text-text-secondary text-m">
                           <li>Users should be able to request a consultation with a financial expert through the CRED app</li>
-                          <li>The consultation should be tailored to the user's investment strategy and portfolio</li>
-                          <li>The user should receive actionable advice on how to improve their portfolio's performance</li>
+                          <li>The consultation should be tailored to the user&apos;s investment strategy and portfolio</li>
+                          <li>The user should receive actionable advice on how to improve their portfolio&apos;s performance</li>
                         </ul>
                       </div>
                     </div>
