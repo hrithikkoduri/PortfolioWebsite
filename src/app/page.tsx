@@ -351,11 +351,15 @@ export default function Home() {
               />
               <div className="px-6 py-4 flex items-center gap-2">
                 <Image
-                  src="/TalkQL_.png"
+                  src="/TalkQL.png"
                   alt="TalkQL Logo"
                   width={40}
                   height={40}
                   className="object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/placeholder.png';
+                  }}
                 />
                 <h3 className="text-xl font-bold text-text-primary">TalkQL</h3>
                 <span className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -635,7 +639,7 @@ export default function Home() {
                     <div className="w-20 h-20 rounded-2xl bg-card-bg/80 backdrop-blur-sm border border-card-border flex items-center justify-center overflow-hidden shadow-lg shadow-black/5 dark:shadow-black/20">
                       <Image
                         src={`/${experience.company === 'Media.net' ? 'media_net' : 
-                              experience.company === 'Tucson Waters' ? 'Tucson_waters' :
+                              experience.company === 'Tucson Waters' ? 'Tucson_Waters' :
                               experience.company === 'Fruit Bowl Digital' ? 'FBD' : 
                               'Lokally'}.png`}
                         alt={`${experience.company} logo`}
