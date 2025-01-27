@@ -288,7 +288,7 @@ export default function Home() {
               href="https://github.com/hrithikkoduri/WebRover" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
               onMouseMove={handleMouseMove1}
               onMouseEnter={handleMouseEnter1}
               onMouseLeave={handleMouseLeave1}
@@ -336,7 +336,7 @@ export default function Home() {
               href="https://github.com/hrithikkoduri/TalkQL" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
               onMouseMove={handleMouseMove2}
               onMouseEnter={handleMouseEnter2}
               onMouseLeave={handleMouseLeave2}
@@ -384,7 +384,7 @@ export default function Home() {
               href="https://github.com/hrithikkoduri/ConvoPro" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
               onMouseMove={handleMouseMove3}
               onMouseEnter={handleMouseEnter3}
               onMouseLeave={handleMouseLeave3}
@@ -433,7 +433,7 @@ export default function Home() {
               href="https://github.com/hrithikkoduri/DelvinDocs.AI" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
               onMouseMove={handleMouseMove4}
               onMouseEnter={handleMouseEnter4}
               onMouseLeave={handleMouseLeave4}
@@ -482,7 +482,7 @@ export default function Home() {
               href="https://github.com/hrithikkoduri/GitChat" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
               onMouseMove={handleMouseMove5}
               onMouseEnter={handleMouseEnter5}
               onMouseLeave={handleMouseLeave5}
@@ -530,7 +530,7 @@ export default function Home() {
               href="https://github.com/hrithikkoduri/GraphRAG" 
               target="_blank"
               rel="noopener noreferrer"
-              className="relative block bg-card-bg/80 backdrop-sm rounded-2xl border border-card-border shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group"
+              className="relative block bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 shadow-lg shadow-black/5 dark:shadow-black/20 overflow-hidden transform transition-transform duration-300 group hover:bg-card-bg/30"
               onMouseMove={handleMouseMove6}
               onMouseEnter={handleMouseEnter6}
               onMouseLeave={handleMouseLeave6}

@@ -63,7 +63,7 @@ export default function Blogs() {
             {blogPosts.map((post, index) => (
               <Link href={post.link} key={index} className="block">
                 <motion.div
-                  className="relative bg-card-bg/80 rounded-2xl border border-card-border p-6 cursor-pointer shadow-lg shadow-black/5 dark:shadow-black/20"
+                  className="relative bg-card-bg/20 backdrop-blur-sm rounded-2xl border border-card-border/40 p-6 cursor-pointer shadow-lg shadow-black/5 dark:shadow-black/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ 

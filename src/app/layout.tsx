@@ -4,6 +4,7 @@ import "./globals.css";
 import { Caveat } from "next/font/google";
 import { ThemeProvider } from 'next-themes'
 import ThemeSwitch from '@/components/ThemeSwitch'
+import BackgroundParticles from "@/components/BackgroundParticles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} ${caveat.variable} antialiased`}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <BackgroundParticles />
         {children}
       </ThemeProvider>
       </body>

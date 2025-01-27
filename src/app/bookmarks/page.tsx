@@ -22,6 +22,12 @@ const bookmarks: Bookmark[] = [
     category: "AI & Technology",
   },
   {
+    title: "Building LLMS from Scratch",
+    description: "A comprehensive guide on how to build LLMs from scratch, including the basics of neural networks and how to train them.",
+    url: "https://youtube.com/playlist?list=PLPTV0NXA_ZSgsLAr8YCgCwhPIJNNtexWu&si=yZZ5yIYgHfIlBRyO",
+    category: "Development",
+  },
+  {
     title: "Product Management in the Age of AI",
     description: "A comprehensive guide on how product managers can leverage AI to build better products and make data-driven decisions.",
     url: "https://www.youtube.com/watch?v=btllH4W4YS4",
@@ -44,6 +50,12 @@ const bookmarks: Bookmark[] = [
     description: "An insightful talk about the challenges of scaling Airbnb and the lessons learned from the early days.",
     url: "https://www.youtube.com/watch?v=W608u6sBFpo&t=724s",
     category: "Startup",
+  }, 
+  {
+    title: "Smart Home assistant using Langchain",
+    description: "An article about how to build a smart home assistant using Langchain and other LLM frameworks.",
+    url: "https://towardsdatascience.com/langchain-meets-home-assistant-unlock-the-power-of-generative-ai-in-your-smart-home-f318732d9d84?gi=bb1b4dd3b58a",
+    category: "AI & Technology",
   }
 ];
 
@@ -63,10 +75,10 @@ export default function Bookmarks() {
       <main className="min-h-screen pt-24 px-8">
         <div className="max-w-4xl mx-auto py-10">
           <h1 className="text-5xl font-bold text-text-primary mb-4 drop-shadow-sm [text-shadow:_0_3px_10px_rgb(0_0_0_/_30%)]">
-            Bookmarks
+          Things on the internet I really enjoyed watching or reading
           </h1>
           <p className="text-text-primary text-lg md:text-lg leading-relaxed mb-12">
-            A curated collection of interesting articles, resources, and tools that I've found valuable in my journey.
+          These don't follow any particular category, it's just really good articles by awesome people on the internet. I hope you enjoy them as much as I did.
           </p>
 
           {/* Category Filter */}
@@ -102,18 +114,20 @@ export default function Bookmarks() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                
                 transition={{ delay: index * 0.1 }}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
               >
                 <Link href={bookmark.url} target="_blank" rel="noopener noreferrer">
-                  <div className="group relative bg-card-bg/80 backdrop-blur-sm rounded-xl border border-card-border p-6 transition-all duration-300 hover:scale-[1.02]">
+                  <div className="group relative bg-card-bg/20 backdrop-blur-sm rounded-xl border border-card-border/40 p-6 transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-black/5 dark:shadow-black/20">
                     <div className="flex justify-between items-start mb-2">
                       <h2 className="text-xl font-semibold text-text-primary group-hover:text-blue-400 transition-colors duration-200">
                         {bookmark.title}
                       </h2>
                       <span className="text-sm text-text-secondary">{bookmark.date}</span>
                     </div>
+                    
                     <p className="text-text-secondary mb-4">{bookmark.description}</p>
                     <span className="inline-block px-3 py-1 text-sm bg-card-border rounded-full text-text-primary">
                       {bookmark.category}

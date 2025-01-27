@@ -12,7 +12,6 @@ export default function Navigation() {
     { name: 'Blogs', path: '/blogs' },
     { name: 'Bookmarks', path: '/bookmarks' },
     { name: 'Papershelf', path: '/papershelf' },
-    { name: 'Uses', path: '/uses' },
   ];
 
   useEffect(() => {

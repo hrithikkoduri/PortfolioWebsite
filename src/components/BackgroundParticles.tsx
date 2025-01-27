@@ -8,23 +8,20 @@ export default function BackgroundParticles() {
   const { theme } = useTheme()
 
   useEffect(() => {
+    if (!canvasRef.current) return
+    
     const canvas = canvasRef.current
-    if (!canvas) return
-
     const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
+    
+    // Set canvas size
     const setCanvasSize = () => {
-      const scale = window.devicePixelRatio
-      canvas.width = window.innerWidth * scale
-      canvas.height = window.innerHeight * scale
-      ctx.scale(scale, scale)
-      canvas.style.width = `${window.innerWidth}px`
-      canvas.style.height = `${window.innerHeight}px`
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
     }
+    
     setCanvasSize()
     window.addEventListener('resize', setCanvasSize)
-
+    
     // Increased particle count for more connections
     const particleCount = 150
     const particles: Array<{
@@ -128,9 +125,8 @@ export default function BackgroundParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10 pointer-events-none w-full h-full"
+      className="fixed inset-0 -z-10 h-full w-full"
       style={{ position: 'fixed' }}
-      aria-hidden="true"
     />
   )
 } 
