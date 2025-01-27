@@ -199,7 +199,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-24 px-8">
+      <main className="min-h-screen pt-24 px-4 md:px-8">
         <div className="max-w-5xl mx-auto py-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Text Content */}

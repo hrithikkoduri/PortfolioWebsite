@@ -25,7 +25,7 @@ export default function BackgroundParticles() {
     window.addEventListener('resize', setCanvasSize)
     
     // Increased particle count for more connections
-    const particleCount = 150
+    const particleCount = 50
     const particles: Array<{
       x: number
       y: number
