@@ -9,7 +9,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { name: 'Blog', path: '/blog' },
+    { name: 'Blogs', path: '/blogs' },
     { name: 'Bookmarks', path: '/bookmarks' },
     { name: 'Papershelf', path: '/papershelf' },
     { name: 'Uses', path: '/uses' },
