@@ -270,6 +270,41 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Featured Posts Section */}
+        <div className="max-w-5xl mx-auto mt-20 py-10">
+          <h2 className="text-4xl font-bold text-text-primary drop-shadow-sm [text-shadow:_0_2px_8px_rgb(0_0_0_/_20%)]">
+            Updates - My latest project WebRover AI Agent got featured by Langchain & Bizety!
+          </h2>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* LinkedIn Post */}
+            <div className="flex justify-center">
+              <iframe 
+                src="https://www.linkedin.com/embed/feed/update/urn:li:share:7288960354762510337" 
+                height="717" 
+                width="100%" 
+                frameBorder="0" 
+                allowFullScreen 
+                title="Embedded LinkedIn post"
+                className="rounded-xl shadow-lg"
+              />
+            </div>
+            
+            {/* Bizety Article */}
+            <div className="flex justify-center">
+              <iframe 
+                src="https://bizety.com/2025/01/25/cool-product-webrover-an-open-source-ai-agent-for-the-web/" 
+                height="717" 
+                width="100%" 
+                frameBorder="0" 
+                allowFullScreen 
+                title="WebRover Article"
+                className="rounded-xl shadow-lg"
+                sandbox="allow-same-origin allow-scripts"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Projects Section */}
         <div className="max-w-5xl mx-auto mt-20 py-10">
           <h2 className="text-4xl font-bold text-text-primary drop-shadow-sm [text-shadow:_0_2px_8px_rgb(0_0_0_/_20%)]">
@@ -581,6 +616,8 @@ export default function Home() {
 
           </div>
         </div>
+
+        
 
         {/* Work Experience Section */}
         <div className="max-w-5xl mx-auto mt-20 py-10">
